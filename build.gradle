@@ -115,7 +115,7 @@ spotless {
             exclude '**/build/**', '**/build-*/**', '**/bin/**'
         }
         toggleOffOn()
-        googleJavaFormat()
+        googleJavaFormat('1.30.0')
         removeUnusedImports()
         trimTrailingWhitespace()
         endWithNewline()
@@ -172,3 +172,5 @@ dependencies {
     def akitJson = new groovy.json.JsonSlurper().parseText(new File(projectDir.getAbsolutePath() + "/vendordeps/AdvantageKit.json").text)
     annotationProcessor "org.littletonrobotics.akit:akit-autolog:$akitJson.version"
 }
+
+compileJava.finalizedBy("spotlessApply")

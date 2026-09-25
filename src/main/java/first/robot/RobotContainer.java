@@ -4,21 +4,18 @@
 
 package first.robot;
 
-import org.wpilib.command2.Command;
-import org.wpilib.command2.button.CommandXboxController;
-import org.wpilib.command2.button.Trigger;
 import first.robot.Constants.OperatorConstants;
 import first.robot.commands.Autos;
 import first.robot.commands.ExampleCommand;
 import first.robot.subsystems.ExampleSubsystem;
+import org.wpilib.command2.Command;
+import org.wpilib.command2.button.CommandXboxController;
+import org.wpilib.command2.button.Trigger;
 
 /**
- * This class is where the bulk of the robot should be declared. Since
- * Command-based is a
- * "declarative" paradigm, very little robot logic should actually be handled in
- * the {@link Robot}
- * periodic methods (other than the scheduler calls). Instead, the structure of
- * the robot (including
+ * This class is where the bulk of the robot should be declared. Since Command-based is a
+ * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
+ * periodic methods (other than the scheduler calls). Instead, the structure of the robot (including
  * subsystems, commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer {
@@ -26,28 +23,22 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
-  private final CommandXboxController m_driverController = new CommandXboxController(
-      OperatorConstants.kDriverControllerPort);
+  private final CommandXboxController m_driverController =
+      new CommandXboxController(OperatorConstants.kDriverControllerPort);
 
-  /**
-   * The container for the robot. Contains subsystems, OI devices, and commands.
-   */
+  /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
   }
 
   /**
-   * Use this method to define your trigger->command mappings. Triggers can be
-   * created via the
-   * {@link Trigger#Trigger(java.util.function.BooleanSupplier)} constructor with
-   * an arbitrary
-   * predicate, or via the named factories in {@link
-   * org.wpilib.command2.button.CommandGenericHID}'s subclasses for {@link
-   * CommandXboxController
-   * Xbox}/{@link org.wpilib.command2.button.CommandPS4Controller
-   * PS4} controllers or {@link org.wpilib.command2.button.CommandJoystick Flight
-   * joysticks}.
+   * Use this method to define your trigger->command mappings. Triggers can be created via the
+   * {@link Trigger#Trigger(java.util.function.BooleanSupplier)} constructor with an arbitrary
+   * predicate, or via the named factories in {@link org.wpilib.command2.button.CommandGenericHID}'s
+   * subclasses for {@link CommandXboxController Xbox}/{@link
+   * org.wpilib.command2.button.CommandPS4Controller PS4} controllers or {@link
+   * org.wpilib.command2.button.CommandJoystick Flight joysticks}.
    */
   private void configureBindings() {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`

@@ -4,9 +4,9 @@
 
 package first.robot.commands;
 
+import first.robot.subsystems.ExampleSubsystem;
 import org.wpilib.command2.Command;
 import org.wpilib.command2.Commands;
-import first.robot.subsystems.ExampleSubsystem;
 
 public final class Autos {
   /** Example static factory for an autonomous command. */

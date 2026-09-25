@@ -1,10 +1,10 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.wpilib.hardware.hal.HAL;
-import frc.robot.subsystems.ExampleSubsystem;
+import first.robot.subsystems.ExampleSubsystem;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.wpilib.hardware.hal.HAL;
 
 class ExampleUnitTest {
   private ExampleSubsystem m_exampleSubsys;

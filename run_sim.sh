@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 PROJECT_ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 JDK_JAVA="$JAVA_HOME/bin/java"
 JNI_RELEASE="$PROJECT_ROOT/build/jni/release"
@@ -10,7 +12,7 @@ echo "Building robot code and capturing classpath..."
 
 CLASSPATH=$(./gradlew printClasspath -q)
 
-if [[ "$1" == "--no-gui" ]]; then
+if [[ $# -ge 1 && "$1" == "--no-gui" ]]; then
   echo "Starting headless WPILib simulation..."
   export HALSIM_EXTENSIONS="" # Blank to explicitly prevent the GUI popup
 else

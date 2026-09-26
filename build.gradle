@@ -176,11 +176,17 @@ dependencies {
 spotlessCheck.mustRunAfter('spotlessApply')
 compileJava.finalizedBy("spotlessApply")
 
-// FORCE Spotless to skip entirely if compileJava fails
+// Prevents compilation errors from causing spotless errors
 tasks.matching { it.name.startsWith('spotless') }.configureEach { task ->
     task.onlyIf {
         // Only run Spotless if compileJava exists and completed successfully
         def compileTask = tasks.findByName('compileJava')
         return compileTask == null || compileTask.state.failure == null
+    }
+}
+
+tasks.register('printClasspath') {
+    doLast {
+        println sourceSets.main.runtimeClasspath.collect { it.absolutePath }.join(':')
     }
 }

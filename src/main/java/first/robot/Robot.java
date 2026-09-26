@@ -32,8 +32,9 @@ public class Robot extends LoggedRobot {
   public Robot() {
 
     Logger.recordMetadata("ProjectName", "2027Preseason");
-    Logger.recordMetadata(
-        "Git Commit", BuildConstants.GIT_SHA + (BuildConstants.DIRTY != 0 ? "-DIRTY" : ""));
+    @SuppressWarnings({"ConstantValue", "unused"})
+    final String kDirty = BuildConstants.GIT_SHA + (BuildConstants.DIRTY != 0 ? "-DIRTY" : "");
+    Logger.recordMetadata("Git Commit", kDirty);
     Logger.recordMetadata("Build Date", BuildConstants.BUILD_DATE);
 
     // format: off

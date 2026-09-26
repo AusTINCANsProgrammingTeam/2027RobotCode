@@ -58,7 +58,6 @@ public class Robot extends LoggedRobot {
     // and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
-    throw new RuntimeException();
   }
 
   /**
